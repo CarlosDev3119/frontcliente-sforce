@@ -4,6 +4,7 @@ import {ErrorMessage, Field} from 'formik'
 import { useImageFile } from '../../../../hooks/useImageFile';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useForm } from '../../../../hooks/useForm';
 
 interface Step2Props {
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -14,11 +15,16 @@ export interface DataState {
   data: { [key: string]: any }; 
 }
 
-const Step2: FC<Step2Props> = ( {handleInputChange} ) => {
+const initialValues = {
+  rfc: ''
+}
+
+const Step2: FC<Step2Props> = (  ) => {
 
   const { handleFileChange} = useImageFile();
   const { checking, data } = useSelector( (state:DataState ) => state.data );
   
+  const [values, handleInputChange, reset] = useForm(initialValues)
   
   if(checking === 'cheking'){
     return <h1>Sforce Loading ...</h1>
@@ -74,8 +80,9 @@ const Step2: FC<Step2Props> = ( {handleInputChange} ) => {
           type='text'
           className='form-control form-control-lg form-control-solid'
           name='rfc'
-          value={data.rfc}
           onChange={ handleInputChange }
+          defaultValue={data.rfc}
+
         />
         {/* <div className='text-danger mt-2'>
           <ErrorMessage name='rfc' />
@@ -90,7 +97,7 @@ const Step2: FC<Step2Props> = ( {handleInputChange} ) => {
           type='text'
           className='form-control form-control-lg form-control-solid'
           name='RazonSocial'
-          value={ data.razonsocial }
+          defaultValue={ data.razonsocial }
         />
         {/* <div className='text-danger mt-2'>
           <ErrorMessage name='RazonSocial' />
@@ -104,7 +111,7 @@ const Step2: FC<Step2Props> = ( {handleInputChange} ) => {
           type='text'
           className='form-control form-control-lg form-control-solid'
           name='direccionFiscal'
-          value={ data.direccionfiscal }
+          defaultValue={ data.direccionfiscal }
         />
         {/* <div className='text-danger mt-2'>
           <ErrorMessage name='direccionFiscal' />
@@ -118,7 +125,7 @@ const Step2: FC<Step2Props> = ( {handleInputChange} ) => {
           type='text'
           className='form-control form-control-lg form-control-solid'
           name='fechaInscripcion'
-          value={ data.fechainscripcion }
+          defaultValue={ data.fechainscripcion }
         />
         {/* <div className='text-danger mt-2'>
           <ErrorMessage name='fechaInscripcion' />

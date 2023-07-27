@@ -47,10 +47,8 @@ const Step3: FC = () => {
       <div className='fv-row mb-10 mt-3'>
         <label className='form-label required'>Número de Serie</label>
 
-        <Field type="text" name='serieName' value={ data.seriename} className='form-control form-control-lg form-control-solid' />
-        <div className='text-danger mt-2'>
-          <ErrorMessage name='serieName' />
-        </div>
+        <input type="text" name='serieName' defaultValue={ data.seriename} className='form-control form-control-lg form-control-solid' />
+
       </div>
 
       <div className='fv-row mb-10'>
@@ -58,30 +56,26 @@ const Step3: FC = () => {
           <span className='required'>Fecha de emisión</span>
         </label>
 
-        <Field
+        <input
           type="text"
           name='fechaEmision'
           className='form-control form-control-lg form-control-solid'
-          value={ data.fechaemision}
+          defaultValue={ data.fechaemision}
         />
-        <div className='text-danger mt-2'>
-          <ErrorMessage name='fechaEmision' />
-        </div>
+
 
       </div>
 
       <div className='fv-row mb-10'>
         <label className='form-label required'>Fecha de vigencia</label>
 
-        <Field
+        <input
           type='text'
           name='dateField'
           className='form-control form-control-lg form-control-solid'
-          value={ data.datefield}
+          defaultValue={ data.datefield}
         />
-        <div className='text-danger mt-2'>
-          <ErrorMessage name='dateField' />
-        </div>
+
       </div>
 
 

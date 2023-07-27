@@ -456,7 +456,7 @@ const Vertical = () => {
                 <Step2 handleInputChange={handleInputChange}/>
               </div>
 
-              {/* <div data-kt-stepper-element='content'>
+              <div data-kt-stepper-element='content'>
                 <Step3 />
               </div>
 
@@ -476,7 +476,7 @@ const Vertical = () => {
                 <Step7 />
               </div>
 
-              <div data-kt-stepper-element='content'>
+             <div data-kt-stepper-element='content'>
                 <Step8 />
               </div>
 
@@ -486,7 +486,7 @@ const Vertical = () => {
 
               <div data-kt-stepper-element='content'>
                 <Step10 />
-              </div> */}
+              </div> 
 
 
               <div className='d-flex flex-stack pt-10'>

@@ -1,5 +1,4 @@
 import {FC} from 'react'
-import { ErrorMessage, Field } from 'formik'
 
 const Step10: FC = () => {
 
@@ -13,10 +12,8 @@ const Step10: FC = () => {
     <div className='fv-row mb-10 mt-3'>
       <label className='form-label required'>Nombre</label>
 
-      <Field type="text" name='nombrefull' className='form-control form-control-lg form-control-solid' />
-      <div className='text-danger mt-2'>
-        <ErrorMessage name='nombrefull' />
-      </div>
+      <input type="text" name='nombrefull' className='form-control form-control-lg form-control-solid' />
+
     </div>
 
     <div className='fv-row mb-10'>
@@ -24,28 +21,24 @@ const Step10: FC = () => {
         <span className='required'>Correo electrónico</span>
       </label>
 
-      <Field
+      <input
         type="text"
         name='correo'
         className='form-control form-control-lg form-control-solid'
       />
-      <div className='text-danger mt-2'>
-        <ErrorMessage name='correo' />
-      </div>
+
 
     </div>
 
     <div className='fv-row mb-10'>
       <label className='form-label required'>Teléfono (10 digitos)</label>
 
-      <Field
+      <input
         type='text'
         name='numero'
         className='form-control form-control-lg form-control-solid'
       />
-      <div className='text-danger mt-2'>
-        <ErrorMessage name='numero' />
-      </div>
+
     </div>
 
 

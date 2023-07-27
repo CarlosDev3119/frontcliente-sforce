@@ -7,7 +7,7 @@ import { DataState } from './Step2';
 
 const Step4: FC = () => {
 
-  const {previewImage, handleFileChange} = useImageFile();
+  const { handleFileChange} = useImageFile();
   const { data } = useSelector( (state: DataState) => state.data)
 
   return (
@@ -46,10 +46,8 @@ const Step4: FC = () => {
     <div className='fv-row mb-10 mt-3'>
       <label className='form-label required'>Dirección</label>
 
-      <Field type="text" name='direction' value={data.direction} className='form-control form-control-lg form-control-solid' />
-      <div className='text-danger mt-2'>
-        <ErrorMessage name='direction' />
-      </div>
+      <input type="text" name='direction' defaultValue={data.direction} className='form-control form-control-lg form-control-solid' />
+ 
     </div>
 
     <div className='fv-row mb-10'>
@@ -57,30 +55,26 @@ const Step4: FC = () => {
         <span className='required'>Titular</span>
       </label>
 
-      <Field
+      <input
         type="text"
         name='holder'
-        value={ data.holder}
+        defaultValue={ data.holder}
         className='form-control form-control-lg form-control-solid'
       />
-      <div className='text-danger mt-2'>
-        <ErrorMessage name='holder' />
-      </div>
+
 
     </div>
 
     <div className='fv-row mb-10'>
       <label className='form-label required'>Vigencia</label>
 
-      <Field
+      <input
         type='text'
         name='expired'
-        
+        defaultValue={data.expired}
         className='form-control form-control-lg form-control-solid'
       />
-      <div className='text-danger mt-2'>
-        <ErrorMessage name='expired' />
-      </div>
+
     </div>
 
 
